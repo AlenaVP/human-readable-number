@@ -11,10 +11,6 @@ function isHundred(number) {
   return ('' + number).length === 3 ? true : false;
 }
 
-function teen(number) {
-  return tillTeens[number];
-}
-
 function dozen(number) {
   return dozens[Math.floor(number / 10)] + (number % 10 != 0 ? ' ' + tillTeens[number % 10] : '');
 }
