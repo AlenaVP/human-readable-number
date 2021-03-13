@@ -16,14 +16,14 @@ function teen(number) {
 }
 
 function dozen(number) {
-  return dozens[Math.floor(number / 10)] + (number % 10 === 0 ? '' : ' ' + teen(number % 10));
+  return dozens[Math.floor(number / 10)] + (number % 10 != 0 ? ' ' + tillTeens[number % 10] : '');
 }
 
 function hundred(number) {
   return tillTeens[Math.floor(number / 100)] + ' hundred' +
-    (number % 100 === 0 ? '' : ' ' + (isDozen(number % 100) ? dozen(number % 100) : teen(number % 100)));
+    (number % 100 != 0 ? ' ' + (isDozen(number % 100) ? dozen(number % 100) : tillTeens[number % 100]) : '');
 }
 
 module.exports = function toReadable (number) {
-  return isHundred(number) ? hundred(number) : (isDozen(number) ? dozen(number) : (number != 0 ? teen(number) : 'zero'));
+  return isHundred(number) ? hundred(number) : (isDozen(number) ? dozen(number) : (number != 0 ? tillTeens[number] : 'zero'));
 }
