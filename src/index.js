@@ -3,10 +3,6 @@ let tillTeens = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eig
 
 let dozens = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
 
-function isTenn(number) {
-  return ('' + number).length === 2 && number < 20 ? true : false;
-}
-
 function isDozen(number) {
   return ('' + number).length === 2 && number >= 20 ? true : false;
 }
